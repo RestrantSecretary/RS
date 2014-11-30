@@ -1,0 +1,65 @@
+<%= form_for(@restaurant) do |f| %>
+  <% if @restaurant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@restaurant.errors.count, "error") %> prohibited this restaurant from being saved:</h2>
+
+      <ul>
+      <% @restaurant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :rank %><br>
+    <%= f.number_field :rank %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.number_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :fjpn %><br>
+    <%= f.number_field :fjpn %>
+  </div>
+  <div class="field">
+    <%= f.label :fchina %><br>
+    <%= f.number_field :fchina %>
+  </div>
+  <div class="field">
+    <%= f.label :fitarian %><br>
+    <%= f.number_field :fitarian %>
+  </div>
+  <div class="field">
+    <%= f.label :fother %><br>
+    <%= f.number_field :fother %>
+  </div>
+  <div class="field">
+    <%= f.label :sdate %><br>
+    <%= f.number_field :sdate %>
+  </div>
+  <div class="field">
+    <%= f.label :sconpa %><br>
+    <%= f.number_field :sconpa %>
+  </div>
+  <div class="field">
+    <%= f.label :sfever %><br>
+    <%= f.number_field :sfever %>
+  </div>
+  <div class="field">
+    <%= f.label :sother %><br>
+    <%= f.number_field :sother %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

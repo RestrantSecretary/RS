@@ -1,0 +1,55 @@
+
+
+
+<div id ="title">Choice Your Good Time</div>
+<h1>Recomend restaurants</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Rank</th>
+      <th>Price</th>
+ <!--     <th>Fjpn</th>
+      <th>Fchina</th>
+      <th>Fitarian</th>
+      <th>Fother</th>
+      <th>Sdate</th>
+      <th>Sconpa</th>
+      <th>Sfever</th>
+      <th>Sother</th>  -->
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @restaurants.each do |restaurant| %>
+      <tr>
+        <td><%= restaurant.name %></td>
+        <td><%= restaurant.address %></td>
+        <td><%= restaurant.rank %></td>
+        <td><%= restaurant.price %></td>
+   <!--     <td><%= restaurant.fjpn %></td>
+        <td><%= restaurant.fchina %></td>
+        <td><%= restaurant.fitarian %></td>
+        <td><%= restaurant.fother %></td>
+        <td><%= restaurant.sdate %></td>
+        <td><%= restaurant.sconpa %></td>
+        <td><%= restaurant.sfever %></td>
+        <td><%= restaurant.sother %></td> -->
+        <td><%= link_to 'Show', restaurant %></td>
+        <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
+        <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<div id="dateBtn">go on a date★</div>
+<div id="partyBtn">party☆★</div>
+<div id="richBtn">are you rich?</div>
+<div id="poorBtn">now pooring *.* </div>
+<div id="conpaBtn">conpa!conpa!!</div>
+<%= link_to 'New Restaurant', new_restaurant_path %>
