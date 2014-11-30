@@ -47,9 +47,10 @@
 </table>
 <br>
 
-<div id="dateBtn">go on a date★</div>
-<div id="partyBtn">party☆★</div>
-<div id="richBtn">are you rich?</div>
-<div id="poorBtn">now pooring *.* </div>
-<div id="conpaBtn">conpa!conpa!!</div>
+<div id="dateBtn"> <%= link_to 'date★', controller: "restaurants", action: "index", choice: 'date'%>
+</div>
+<div id="partyBtn"><%= link_to 'party☆★', controller: "restaurants", action: "index", choice: 'fever'%></div>
+<div id="richBtn"><%= link_to 'are you rich?', controller: "restaurants", action: "index", choice: 'rich'%></div>
+<div id="poorBtn"><%= link_to 'now pooring *.*', controller: "restaurants", action: "index", choice: 'poor'%></div>
+<div id="conpaBtn"><%= link_to 'conpa!conpa!!', controller: "restaurants", action: "index", choice: 'conpa'%></div>
 <%= link_to 'New Restaurant', new_restaurant_path %>

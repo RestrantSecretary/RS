@@ -4,9 +4,24 @@ class RestaurantsController < ApplicationController
   # GET /restaurants
   # GET /restaurants.json
   def index
-    @restaurants = Restaurant.all
+    if params['choice'] == nil then
+    @restaurants = Restaurant.order("rank DESC").limit(3)
+   else
+    choiceParam = params['choice'];
+    case  choiceParam
+     when 'date'
+    @restaurants = Restaurant.where(:sdate =>"1").order("rank DESC").limit(3)
+     when 'party'
+    @restaurants = Restaurant.where(:sfever =>"1").order("rank DESC").limit(3)
+    # when 'rich'
+    # when 'poor'
+     when 'conpa'
+       @restaurants = Restaurant.where(:sconpa =>"1").order("rank DESC").limit(3)
+     else
+       @restaurants = Restaurant.all
+     end
+   end
   end
-
   # GET /restaurants/1
   # GET /restaurants/1.json
   def show
