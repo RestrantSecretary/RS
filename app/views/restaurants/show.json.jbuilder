@@ -1,1 +1,1 @@
-json.extract! @restaurant, :id, :name, :address, :rank, :price, :fjpn, :fchina, :fitarian, :fother, :sdate, :sconpa, :sfever, :sother, :created_at, :updated_at
+json.extract! @restaurant, :id, :name, :address, :URL, :TEL, :rank, :price, :fjpn, :fchina, :fitarian, :fother, :sdate, :sconpa, :sfever, :sother, :fpanish, :ffranch, :extraText1, :extraText2, :extraText3, :created_at, :updated_at

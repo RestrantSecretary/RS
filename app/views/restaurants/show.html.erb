@@ -9,6 +9,13 @@
   <strong>Address:</strong>
   <%= @restaurant.address %>
 </p>
+<p>
+  <strong>Tel:</strong>
+  <%= @restaurant.TEL %>
+</p>
+<strong>URL:</strong>
+  <%= @restaurant.URL %>
+</p>
 
 <p>
   <strong>Rank:</strong>
@@ -33,6 +40,14 @@
 <p>
   <strong>Fitarian:</strong>
   <%= @restaurant.fitarian %>
+</p>
+<p>
+  <strong>Ffrench:</strong>
+  <%= @restaurant.ffranch %>
+</p>
+<p>
+  <strong>Fspanish:</strong>
+  <%= @restaurant.fspanish %>
 </p>
 
 <p>
@@ -59,6 +74,17 @@
   <strong>Sother:</strong>
   <%= @restaurant.sother %>
 </p>
-
+<p>
+  <strong>extraText1:</strong>
+  <%= @restaurant.extraText1 %>
+</p>
+<p>
+  <strong>extraText2:</strong>
+  <%= @restaurant.extraText2 %>
+</p>
+<p>
+  <strong>extraText3:</strong>
+  <%= @restaurant.extraText3 %>
+</p>
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <%= link_to 'Back', restaurants_path %>

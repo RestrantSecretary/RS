@@ -4,6 +4,11 @@ class RestaurantsController < ApplicationController
   # GET /restaurants
   # GET /restaurants.json
   def index
+    @dev = 0
+    if params['dev'] != nil then
+       @dev = 1
+    end
+
     if params['choice'] == nil then
     @restaurants = Restaurant.order("rank DESC").limit(3)
    else

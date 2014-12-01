@@ -1,56 +1,49 @@
 
 
-
+<h2>
 <div id ="title">Choice Your Good Time</div>
-<h1>Recomend restaurants</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Rank</th>
-      <th>Price</th>
- <!--     <th>Fjpn</th>
-      <th>Fchina</th>
-      <th>Fitarian</th>
-      <th>Fother</th>
-      <th>Sdate</th>
-      <th>Sconpa</th>
-      <th>Sfever</th>
-      <th>Sother</th>  -->
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+</h2>
+<h1>Your Recomended restaurants IN 恵比寿</h1>
+  <div id = "shopInfo">
     <% @restaurants.each do |restaurant| %>
-      <tr>
-        <td><%= restaurant.name %></td>
-        <td><%= restaurant.address %></td>
-        <td><%= restaurant.rank %></td>
-        <td><%= restaurant.price %></td>
-   <!--     <td><%= restaurant.fjpn %></td>
-        <td><%= restaurant.fchina %></td>
-        <td><%= restaurant.fitarian %></td>
-        <td><%= restaurant.fother %></td>
-        <td><%= restaurant.sdate %></td>
-        <td><%= restaurant.sconpa %></td>
-        <td><%= restaurant.sfever %></td>
-        <td><%= restaurant.sother %></td> -->
-        <td><%= link_to 'Show', restaurant %></td>
-        <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
-        <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <div id = "shoplist1" class="shopbk" image="shop1" >
+      <div class = "shopEdit">
+        <%= if params["user"] == "admin" then
+         link_to 'show', restaurant
+         else end%>
+        <%= if params["user"] == "admin" then
+          link_to 'Edit', edit_restaurant_path(restaurant)
+          else end%>
+        <%=  if params["user"] == "admin" then
+          link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' }
+           else end %></div>
+     <div class = "shopInfoPos">
+      <%= restaurant.name %>　　　　
+      住所:　<%= restaurant.address %>　　</br>
+      評価:　<%= restaurant.rank %>　　
+      価格:　概ね　￥<%= restaurant.price %>
+      </div>
+    </div>　　　　　　</div>
+    <div id = "line">　</div>
     <% end %>
-  </tbody>
-</table>
+  </div>
 <br>
-
-<div id="dateBtn"> <%= link_to 'date★', controller: "restaurants", action: "index", choice: 'date'%>
 </div>
-<div id="partyBtn"><%= link_to 'party☆★', controller: "restaurants", action: "index", choice: 'fever'%></div>
-<div id="richBtn"><%= link_to 'are you rich?', controller: "restaurants", action: "index", choice: 'rich'%></div>
-<div id="poorBtn"><%= link_to 'now pooring *.*', controller: "restaurants", action: "index", choice: 'poor'%></div>
-<div id="conpaBtn"><%= link_to 'conpa!conpa!!', controller: "restaurants", action: "index", choice: 'conpa'%></div>
-<%= link_to 'New Restaurant', new_restaurant_path %>
+<div id="partyBtn" class = "floatLeft"><%= link_to 'party☆★', controller: "restaurants", action: "index", choice: 'fever'%></div>
+<div class = "floatLeft"> 　　</div>
+<div id="richBtn" class = "floatLeft"><%= link_to 'are you rich?', controller: "restaurants", action: "index", choice: 'rich'%></div>
+<div class = "floatLeft"> 　　</div>
+<div id="poorBtn" class = "floatLeft"><%= link_to 'now pooring *.*', controller: "restaurants", action: "index", choice: 'poor'%></div>
+<div class = "floatLeft"> 　　</div>
+<div id="conpaBtn" class = "floatLeft"><%= link_to 'conpa!conpa!!', controller: "restaurants", action: "index", choice: 'conpa'%></div>
+<div class = "floatLeft"> 　　</div>
+<div id="nextBtn" class = "floatLeft"><%= link_to 'change!!', controller: "restaurants", action: "index", choice: 'change'%></div>
+<div class = "floatLeft"> 　　</div>
+</br>
+</br>
+<div class = "floatLeft">
+<%= if params["user"] == "admin" then
+link_to 'New Restaurant', new_restaurant_path
+ else end%>
+</div>
+
