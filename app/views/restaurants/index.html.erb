@@ -1,13 +1,14 @@
 
-
 <h2>
-<div id ="title">Choice Your Good Time</div>
+<div id ="title" class = "lineHeight5">Choice Your Good Time</div>
 </h2>
-<h1>Your Recomended restaurants IN 恵比寿</h1>
-  <div id = "shopInfo">
-    <% @restaurants.each do |restaurant| %>
+<h1  class = "lineHeight5">Your Recomended restaurants IN 恵比寿</h1>
+  <div id = "shopInfo" class = "lineHeight5">
+    <%
+    @restaurants.each do |restaurant|
+      %>
     <div id = "shoplist1" class="shopbk" image="shop1" >
-      <div class = "shopEdit">
+      <div class = "shopEdit lineHeight5">
         <%= if params["user"] == "admin" then
          link_to 'show', restaurant
          else end%>
@@ -17,7 +18,7 @@
         <%=  if params["user"] == "admin" then
           link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' }
            else end %></div>
-     <div class = "shopInfoPos">
+     <div class = "shopInfoPos lineHeight5">
       <%= restaurant.name %>　　　　
       住所:　<%= restaurant.address %>　　</br>
       評価:　<%= restaurant.rank %>　　
@@ -29,7 +30,7 @@
   </div>
 <br>
 </div>
-<div id="partyBtn" class = "floatLeft"><%= link_to 'party☆★', controller: "restaurants", action: "index", choice: 'fever'%></div>
+<div id="fever
 <div class = "floatLeft"> 　　</div>
 <div id="richBtn" class = "floatLeft"><%= link_to 'are you rich?', controller: "restaurants", action: "index", choice: 'rich'%></div>
 <div class = "floatLeft"> 　　</div>
@@ -37,7 +38,9 @@
 <div class = "floatLeft"> 　　</div>
 <div id="conpaBtn" class = "floatLeft"><%= link_to 'conpa!conpa!!', controller: "restaurants", action: "index", choice: 'conpa'%></div>
 <div class = "floatLeft"> 　　</div>
-<div id="nextBtn" class = "floatLeft"><%= link_to 'change!!', controller: "restaurants", action: "index", choice: 'change'%></div>
+<div id="shuffleBtn" class = "floatLeft"><%= link_to 'shuffle!!', controller: "restaurants", action: "index", choice: 'shuffle'%></div>
+<div class = "floatLeft"> 　　</div>
+<div id="nextBtn" class = "floatLeft"><%= link_to 'next!!', controller: "restaurants", action: "index", choice: 'next'%></div>
 <div class = "floatLeft"> 　　</div>
 </br>
 </br>
